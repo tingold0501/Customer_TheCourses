@@ -1,9 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import IGG from '../assets/images/company/google.svg';
 
 function Header() {
+    const token = localStorage.getItem('token');
+    const userInfor = JSON.parse(localStorage.getItem("userInfor"));
     const [open, setOpen] = useState(false);
+    const logout = () => {
+        if (localStorage.getItem('token')) {
+            localStorage.removeItem('token');
+            window.location.replace('/');
+        }
+    }
     return (
         <div className="w-full text-gray-700 bg-cream">
             <div className="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
@@ -25,17 +34,36 @@ function Header() {
                     </button>
                 </div>
                 <nav className={`md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 scale-y-0 ${open ? '' : 'transform md:transform-none'} ${open ? 'h-full' : ''}`}>
-                    <a className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">Home</a>
-                    <a className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">Careers</a>
+                    <Link to='/' className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                        <a href="#">Home</a>
+                    </Link>
+                    <Link to='/course' className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                        <a href="#">Course</a>
+                    </Link >
                     <a className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">Blog</a>
                     <a className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">About Us</a>
-                    <Link to='/login' className="px-10 py-3 mt-2 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4">
-                        <a >Login</a>
+                    <Link to='/contact' className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                        <a href="#">Contact</a>
                     </Link>
-                    <Link to='/register' className="px-10 py-3 mt-2 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4">
-                        <a href="#">Sign Up</a>
-                    </Link>
+                    <a className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">About Us</a>
+                    {token ? (
+                        <span className='flex'>
+                            <a onClick={logout} className="px-10 py-3 mt-2 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4" href="#">Log out</a>
+                            <a className="text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#"><img className='w-10 h-10 rounded-full' src={userInfor.avatar} alt="" />
+                            </a>
+                        </span>
+                    ) : (
+                        <div className=' mt-7' >
+                            <Link to='/login' className="px-10 py-3 mt-2 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4">
+                                <a >Login</a>
+                            </Link>
+                            <Link to='/404' className="px-10 py-3 mt-2 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4">
+                                <a href="#">Sign Up</a>
+                            </Link>
+                        </div>
+                    )}
                 </nav>
+
             </div>
         </div>
     )
