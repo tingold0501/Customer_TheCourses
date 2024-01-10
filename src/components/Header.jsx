@@ -48,16 +48,16 @@ function Header() {
                     <a className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">About Us</a>
                     {token ? (
                         <span className='flex'>
-                            <a onClick={logout} className="px-10 py-3 mt-2 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4" href="#">Log out</a>
+                            <a onClick={logout} className="px-10 py-3 mb-4 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4" href="#">Log out</a>
                             <a className="text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#"><img className='w-10 h-10 rounded-full' src={userInfor.avatar} alt="" />
                             </a>
                         </span>
                     ) : (
-                        <div className=' mt-7' >
-                            <Link to='/login' className="px-10 py-3 mt-2 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4">
+                        <div className='' >
+                            <Link to='/login' className="px-10 py-3  mb-4 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4">
                                 <a >Login</a>
                             </Link>
-                            <Link to='/404' className="px-10 py-3 mt-2 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4">
+                            <Link to='/404' className="px-10 py-3 mb-4 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4">
                                 <a href="#">Sign Up</a>
                             </Link>
                         </div>
