@@ -2,8 +2,8 @@ import React from 'react';
 
 function CategoryItem({ props }) {
   return (
-    <div>
-      <div className="flex flex-col items-center gap-3 px-8 py-10 bg-white drop-shadow-2xl rounded-3xl shadow-main">
+    <div className='cursor-pointer'>
+      <div data-aos="fade-up" className=" flex flex-col items-center gap-3 px-8 py-10 bg-white drop-shadow-2xl rounded-3xl shadow-main">
         <span>
           {props.svg}
         </span>

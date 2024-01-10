@@ -2,7 +2,7 @@ import React from 'react';
 
 function Courses() {
     return (
-        <div className='w-[80%]'>
+        <div data-aos="flip-up" className='w-[80%]'>
             <>
                 {/* component */}
                 <div className="relative mx-auto  pt-6">

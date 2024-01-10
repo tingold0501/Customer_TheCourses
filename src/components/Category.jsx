@@ -5,7 +5,7 @@ function Category() {
   return (
     <div>
         {/* component */}
-        <div className="container flex flex-col mx-auto bg-white">
+        <div className="container floating-4 flex flex-col mx-auto bg-white">
           <div className="w-full draggable">
             <div className="container flex flex-col items-center gap-16 mx-auto my-32">
               <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">

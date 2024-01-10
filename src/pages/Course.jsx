@@ -4,10 +4,13 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Courses from '../components/Courses';
 import Category from '../components/Category';
+import Banner from '../components/Banner';
 function Course() {
   return (
     <div>
       <Header />
+      <Banner/>
+     
       <Category/>
       <div className="grid grid-cols-4 gap-4 ml-[5%]">
         <Courses />

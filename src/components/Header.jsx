@@ -40,8 +40,9 @@ function Header() {
                     <Link to='/course' className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline">
                         <a href="#">Course</a>
                     </Link >
-                    <a className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">Blog</a>
-                    <a className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">About Us</a>
+                    <Link to='/blog' className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                    <a  href="#">Blog</a>
+                    </Link>
                     <Link to='/contact' className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline">
                         <a href="#">Contact</a>
                     </Link>
@@ -53,7 +54,7 @@ function Header() {
                             </a>
                         </span>
                     ) : (
-                        <div className='' >
+                        <div className='mt-8' >
                             <Link to='/login' className="px-10 py-3  mb-4 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4">
                                 <a >Login</a>
                             </Link>
