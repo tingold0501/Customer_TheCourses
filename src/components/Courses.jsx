@@ -1,6 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Courses() {
+    const urlApi = 'http://127.0.0.1:8000/api/';
+    const [courses, setCourses] = useState([]);
+    const [users, setUsers] = useState([]);
+    // useEffect(() => {
+    //     fetch(urlApi + "getDataCourses")
+    //       .then((res) => res.json())
+    //       .then((res) => {
+            
+    //             setCourses(res);
+    //             console.log(res);
+            
+    //       });
+    //   }, []);
+      useEffect(() => {
+        fetch(urlApi + "getDataUser")
+          .then((res) => res.json())
+          .then((res) => {
+            
+                setUsers(res);
+                console.log(res);
+            
+          });
+      }, []);
     return (
         <div data-aos="flip-up" className='w-[80%]'>
             <>

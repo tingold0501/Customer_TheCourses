@@ -2,6 +2,7 @@ import React from 'react';
 import CategoryItem from './CategoryItem';
 
 function Category() {
+  
   return (
     <div>
         {/* component */}
