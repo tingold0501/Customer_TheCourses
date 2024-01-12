@@ -18,10 +18,8 @@ function Courses() {
         fetch(urlApi + "getDataUser")
           .then((res) => res.json())
           .then((res) => {
-            
                 setUsers(res);
                 console.log(res);
-            
           });
       }, []);
     return (
