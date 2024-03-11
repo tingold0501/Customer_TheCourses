@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import IGG from '../assets/images/company/google.svg';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 function Header() {
     const token = localStorage.getItem('token');
@@ -13,6 +14,7 @@ function Header() {
             window.location.replace('/');
         }
     }
+
     return (
         <div className="w-full text-gray-700 bg-cream">
             <div className="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
@@ -41,7 +43,7 @@ function Header() {
                         <a href="#">Course</a>
                     </Link >
                     <Link to='/blog' className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline">
-                    <a  href="#">Blog</a>
+                        <a href="#">Blog</a>
                     </Link>
                     <Link to='/contact' className="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline">
                         <a href="#">Contact</a>
@@ -50,7 +52,10 @@ function Header() {
                     {token ? (
                         <span className='flex'>
                             <a onClick={logout} className="px-10 py-3 mb-4 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4" href="#">Log out</a>
-                            <a className="text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#"><img className='w-10 h-10 rounded-full' src={userInfor.avatar} alt="" />
+                            <a className="text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">
+                                {userInfor && userInfor.avatar && (
+                                    <img className='w-10 h-10 rounded-full' src={userInfor.avatar} alt="" />
+                                )}
                             </a>
                         </span>
                     ) : (
@@ -58,7 +63,7 @@ function Header() {
                             <Link to='/login' className="px-10 py-3  mb-4 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4">
                                 <a >Login</a>
                             </Link>
-                            <Link to='/404' className="px-10 py-3 mb-4 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4">
+                            <Link to='/register' className="px-10 py-3 mb-4 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4">
                                 <a href="#">Sign Up</a>
                             </Link>
                         </div>
