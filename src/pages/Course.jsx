@@ -14,10 +14,6 @@ function Course() {
       <Category/>
       <div className="grid grid-cols-4 gap-4 ml-[5%]">
         <Courses />
-        <Courses />
-        <Courses />
-        <Courses />
-       
       </div>
       <div className="flex flex-col items-center mt-12 text-center">
       <span className="relative inline-flex w-full md:w-auto">
