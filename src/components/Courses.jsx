@@ -1,17 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-function Courses() {
-    const url = "http://localhost/api/";
-    const [courses, setCourses] = useState([]);
-    useEffect(() => {
-        fetch(url + "getAllDataCourse")
-          .then((res) => res.json())
-          .then((res) => {
-                setCourses(res);
-                console.log(res);
-          });
-      }, []);
-     
+function Courses(item) {
+   
     return (
         <div data-aos="flip-up" className='w-[80%]'>
             <>
@@ -75,27 +65,25 @@ function Courses() {
                                                 className="line-clamp-1 text-base font-medium text-gray-800 md:text-lg"
                                                 title="New York"
                                             >
-                                                Statue of Liberty
+                                                {item.name}
                                             </h2>
                                             <p
                                                 className="mt-2 line-clamp-1 text-sm text-gray-800"
                                                 title="New York, NY 10004, United States"
                                             >
-                                                New York, NY 10004, United States
+                                                sumary
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-end">
                                         <p className="text-primary inline-block whitespace-nowrap rounded-xl font-semibold leading-tight">
-                                            <span className="text-sm uppercase"> $ </span>
-                                            <span className="text-lg">3,200</span>/m
+                                            {/* <span className="text-sm uppercase"> % </span> */}
+                                            <span className="text-lg">discount</span> %
                                         </p>
                                     </div>
                                 </div>
                                 <div className="mt-2 border-t border-gray-200 pt-3">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-                                    laboriosam labore obcaecati hic fugit exercitationem ad blanditiis
-                                    inventore excepturi cumque!
+                                    detail
                                 </div>
                             </div>
                         </div>
