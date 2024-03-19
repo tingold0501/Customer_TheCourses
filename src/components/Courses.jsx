@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function Courses(item) {
+function Courses() {
    
     return (
         <div data-aos="flip-up" className='w-[80%]'>
