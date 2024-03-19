@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
 
-function Courses() {
-   
+function Courses(item) {
     return (
         <div data-aos="flip-up" className='w-[80%]'>
             <>
@@ -71,7 +69,7 @@ function Courses() {
                                                 className="mt-2 line-clamp-1 text-sm text-gray-800"
                                                 title="New York, NY 10004, United States"
                                             >
-                                                sumary
+                                                {item.sumary}
                                             </p>
                                         </div>
                                     </div>
@@ -83,7 +81,7 @@ function Courses() {
                                     </div>
                                 </div>
                                 <div className="mt-2 border-t border-gray-200 pt-3">
-                                    detail
+                                    {item.detail}
                                 </div>
                             </div>
                         </div>
