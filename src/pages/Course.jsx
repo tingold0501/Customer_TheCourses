@@ -6,6 +6,7 @@ import Courses from '../components/Courses';
 import Category from '../components/Category';
 import Banner from '../components/Banner';
 import EmtyCourse from '../../public/emtythecourse.jpg'
+import History from '../components/History';
 function Course() {
   const url = "http://localhost/api/";
   const [courses, setCourses] = useState([]);
@@ -21,8 +22,9 @@ function Course() {
     <div>
       <Header />
       <Banner />
+      <History/>
       <Category />
-      <section className="container mx-auto px-8 py-8 lg:py-40">
+      {/* <section className="container mx-auto px-8 py-8 lg:py-40">
         <h2 className="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 !text-3xl !leading-snug lg:!text-4xl">Latest Achievements</h2>
         <p className="block antialiased font-sans text-xl font-normal leading-relaxed text-inherit mt-2 w-full font-normal !text-gray-500 lg:w-5/12">Read about our latest achievements and milestones.</p>
         <a href="https://www.material-tailwind.com/" target="_blank">Generated with <b>Magic AI Blocks</b> by Creative Tim</a>.
@@ -43,7 +45,7 @@ function Course() {
         {courses.length == 1 && (
           <img className='w-full ' src={EmtyCourse} alt="" srcset="" />
         )}
-      </section>
+      </section> */}
       <div className="flex flex-col items-center mt-12 text-center">
         <span className="relative inline-flex w-full md:w-auto">
           <a
