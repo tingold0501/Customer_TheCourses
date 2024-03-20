@@ -6,6 +6,7 @@ function Category() {
   return (
     <div>
         {/* component */}
+        <h1 className='font-semibold text-[36px] text-[#252641] ml-[8%] mt-40   '>Choice favourite course from top category</h1>
         <div className="container floating-4 flex flex-col mx-auto bg-white">
           <div className="w-full draggable">
             <div className="container flex flex-col items-center gap-16 mx-auto my-32">
