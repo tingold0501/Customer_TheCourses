@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import RecomendItem from './RecomendItem';
-
-function Recomend() {
+import { Image } from '@mui/icons-material';
+import EmtyCourse from '../../public/emtyCourse.jpg';
+function Recomend({ children }) {
     const url = "http://localhost/api/";
     const [courses, setCourses] = useState([]);
-    const [coursesDuration, setCoursesDuration] = useState([]);
+
+    const getCourse = async () => {
+        const res = await fetch(url + "getAllCourse");
+        const data = await res.json();
+        setCourses(data);
+        console.log(data);
+    }
     useEffect(() => {
-        fetch(url + "getAllDataCourse")
+        fetch(url + "getLatestCourses")
             .then((res) => res.json())
             .then((res) => {
                 setCourses(res);
@@ -17,26 +24,31 @@ function Recomend() {
         <div className='bg-[#E0EDFB]'>
             <div className='flex justify-between items-center mt-10  '>
                 <h1 className='ml-[6%] mt-[5%] font-semibold text-[36px] text-[#252641]'>Welcome back, ready for your next lesson?</h1>
-                <h4 className='mr-[6%] mt-[5%] font-bold text-[#49BBBD]'>See all</h4>
+                <h4 onClick={getCourse} className='mr-[6%] cursor-pointer mt-[5%] font-bold text-[#49BBBD]'>See all</h4>
             </div>
             <div className="min-h-screen bg-[#E0EDFB] flex justify-center items-center ">
                 <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 space-y-4 md:space-y-0">
                     {courses.length > 0 &&
                         courses.map((item) => (
                             <RecomendItem key={item.id} name={item.name} image={item.image} discount={item.discount} />
-                        ))}
+                    ))}
+                    {
+                        courses.length == 0 &&(
+                            <Image src="../public/emtyCourse.jpg" alt="EmtyCourse" />
+                        )
+                    }
                 </div>
             </div>
+            
         </div>
 
     );
 }
-
 export default Recomend;
 
 
 
-                    {/* <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+{/* <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
                         <h3 className="mb-3 text-xl font-bold text-[#49BBBD]">Beginner Friendly</h3>
                         <div className="relative">
                             <img className="w-full rounded-xl" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Colors" />
