@@ -2,23 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Courses from '../components/Courses';
 import Category from '../components/Category';
 import Banner from '../components/Banner';
-import EmtyCourse from '../../public/emtythecourse.jpg'
 import History from '../components/History';
 import Recomend from '../components/Recomend';
 function Course() {
-  const url = "http://localhost/api/";
-  const [courses, setCourses] = useState([]);
-  useEffect(() => {
-    fetch(url + "getAllDataCourse")
-      .then((res) => res.json())
-      .then((res) => {
-        setCourses(res);
-        console.log(res);
-      });
-  }, []);
+  
   return (
     <div>
       <Header />
