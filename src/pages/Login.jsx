@@ -50,7 +50,7 @@ function Login() {
         else{
             axios({
                 method: 'post',
-                url: url+'loginCustomer',
+                url: url+'loginStudent',
                 data: {
                   email:email,
                   password:password

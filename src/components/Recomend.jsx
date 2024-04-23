@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import RecomendItem from './RecomendItem';
 import { Image } from '@mui/icons-material';
-import EmtyCourse from '../../public/emtyCourse.jpg';
+// import EmtyCourse from '../../public/emtyCourse.jpg';
 function Recomend({ children }) {
     const url = "http://localhost/api/";
+    const urlImage = "http://localhost/images/";
     const [courses, setCourses] = useState([]);
 
     const getCourse = async () => {
@@ -30,7 +31,7 @@ function Recomend({ children }) {
                 <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 space-y-4 md:space-y-0">
                     {courses.length > 0 &&
                         courses.map((item) => (
-                            <RecomendItem key={item.id} name={item.name} image={item.image} discount={item.discount} />
+                            <RecomendItem key={item.id} name={item.name} image={urlImage +item.image} discount={item.discount} />
                     ))}
                     {
                         courses.length == 0 &&(
